@@ -1,2 +1,3 @@
-# financeapp-backend
-Backend of the FinanceAPP 
+# FinanceAPP Backend
+
+Backend of the FinanceAPP built with NodeJS
