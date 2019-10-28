@@ -1,0 +1,17 @@
+{
+  "name": "financeapp-backend-node",
+  "version": "1.0.0",
+  "description": "FinanceAPP backend built with NodeJs",
+  "main": "index.js",
+  "repository": "https://github.com/ViictrP/financeapp-backend.git",
+  "author": "viictrp <Vtr183461>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
