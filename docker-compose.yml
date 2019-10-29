@@ -1,0 +1,19 @@
+version: "2"
+services:
+  mongodb:
+    image: bitnami/mongodb:latest
+    ports: [ "27017:27017" ]
+    volumes: 
+      - ./:/database/db
+    environment:
+      - MONGODB_USER=usuario
+      - MONGODB_PASSWORD=senha
+      - MONGODB_DATABASE=banco
+      - MONGODB_ROOT_PASSWORD=senha_do_root
+  web:
+    build: .
+    volumes:
+      - ./:/src
+    ports: [ "8080:3000" ]
+    depends_on:
+      - mongodb
