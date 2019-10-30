@@ -2,10 +2,11 @@ version: "2"
 services:
   mysql:
     image: mysql:5.7
-    ports: ["3306:3306"]
-    expose: ['3306']
-    volumes:
-      - ./:/database/db
+    restart: 'always'
+    expose:
+      - '3306'
+    ports:
+      - '3306:3306'
     environment:
       - MYSQL_DATABASE=financeapp_backend_node
       - MYSQL_USER=root

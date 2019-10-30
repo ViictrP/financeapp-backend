@@ -14,4 +14,6 @@ USER node
 
 EXPOSE 8080
 
+RUN npm install sequelize-cli
+
 CMD [ "node", "src/server.js" ]
