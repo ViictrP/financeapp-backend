@@ -1,19 +1,20 @@
 version: "2"
 services:
-  mongodb:
-    image: bitnami/mongodb:latest
-    ports: [ "27017:27017" ]
-    volumes: 
+  mysql:
+    image: mysql:5.7
+    ports: ["3306:3306"]
+    expose: ['3306']
+    volumes:
       - ./:/database/db
     environment:
-      - MONGODB_USER=usuario
-      - MONGODB_PASSWORD=senha
-      - MONGODB_DATABASE=banco
-      - MONGODB_ROOT_PASSWORD=senha_do_root
+      - MYSQL_DATABASE=financeapp_backend_node
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
+      - MYSQL_ROOT_PASSWORD=root
   web:
     build: .
     volumes:
       - ./:/src
-    ports: [ "8080:3000" ]
+    ports: ["8080:3000"]
     depends_on:
-      - mongodb
+      - mysql
