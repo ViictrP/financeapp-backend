@@ -7,6 +7,15 @@ class UserController {
         const saved = await User.create(user);
         res.json(saved);
     }
+
+    async getUsers(req, res) {
+        const users = await User.findAll();
+        return res.json(users);
+    }
+
+    async getSelf(req, res) {
+        res.send(JSON.stringify(req.userContext.userinfo));
+    }
 }
 
 module.exports = new UserController();

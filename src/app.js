@@ -1,6 +1,7 @@
 'use strict';
 
 const express = require('express');
+const authMiddleware = require('./authentication/AuthenticationMiddleware');
 
 class AppController {
     
@@ -11,6 +12,8 @@ class AppController {
     }
 
     middleware() {
+        this.express.use(authMiddleware.session);
+        this.express.use(authMiddleware.oidc.router);
         this.express.use(express.json());
     }
 
