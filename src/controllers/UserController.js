@@ -14,7 +14,7 @@ class UserController {
     }
 
     async getSelf(req, res) {
-        res.send(JSON.stringify(req.userContext.userinfo));
+        res.send(JSON.stringify(req.userContext));
     }
 }
 
