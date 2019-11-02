@@ -14,7 +14,11 @@ class UserController {
     }
 
     async getSelf(req, res) {
-        res.send(JSON.stringify(req.userContext));
+        const { userId } = req;
+        const user = await User.findAll({
+            where: { email: userId }
+        });
+        res.json(user);
     }
 }
 

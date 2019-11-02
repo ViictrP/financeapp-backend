@@ -5,7 +5,7 @@ const { requireUser, oidc } = require('./authentication/AuthenticationMiddleware
 const routes = require('express').Router();
 
 routes.get("/", oidc.ensureAuthenticated(),  (req, res, next) => {
-    res.send(req.userContext.tokens.access_token);
+    res.send(req.userContext.tokens);
 });
 
 routes.post('/users', requireUser, UserController.register);

@@ -12,6 +12,7 @@ class AuthenticationMiddleware {
 	constructor() {
 		this.session = session({
 			secret: 'this should be secure',
+			audience: 'this should be secure',
 			resave: true,
 			saveUninitialized: false
 		});
@@ -33,7 +34,7 @@ class AuthenticationMiddleware {
 			const [authType, token] = authorization.split(' ');
 			if (authType !== 'Bearer') throw new Error('Expected a Bearer token');
 
-			const { claims: { sub } } = await oktaJwtVerifier.verifyAccessToken(token);
+			const { claims: { sub } } = await oktaJwtVerifier.verifyAccessToken(token, 'api://default');
 			req.userId = sub;
 			next();
 		} catch (error) {
