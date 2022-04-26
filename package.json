@@ -1,0 +1,26 @@
+{
+  "name": "financeapp-backend-node",
+  "version": "1.0.0",
+  "description": "FinanceAPP backend built with NodeJs",
+  "main": "index.js",
+  "repository": "https://github.com/ViictrP/financeapp-backend.git",
+  "author": "Victor Prado",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.4"
+  },
+  "dependencies": {
+    "@okta/jwt-verifier": "^1.0.0",
+    "@okta/oidc-middleware": "^2.0.0",
+    "@okta/okta-sdk-nodejs": "^3.1.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "mysql2": "^2.0.0",
+    "sequelize": "^5.21.2"
+  }
+}
