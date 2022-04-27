@@ -6,6 +6,10 @@ public class NotFoundException extends BusinessException {
     super(message);
   }
 
+  public NotFoundException() {
+    super("not found");
+  }
+
   public String getMessage() {
     return super.getMessage();
   }

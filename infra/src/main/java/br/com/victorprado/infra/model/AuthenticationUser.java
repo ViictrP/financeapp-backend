@@ -1,4 +1,4 @@
-package br.com.victorprado.model;
+package br.com.victorprado.infra.model;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
