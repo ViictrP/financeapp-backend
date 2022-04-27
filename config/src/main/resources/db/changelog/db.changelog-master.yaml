@@ -1,1 +1,27 @@
 databaseChangeLog:
+  - changeSet:
+      id: 1
+      comments: User table
+      author: Victor
+      context: local
+      changes:
+        - createTable:
+            tableName: authentication_user
+            columns:
+              - column:
+                  name: id
+                  type: bigserial
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
