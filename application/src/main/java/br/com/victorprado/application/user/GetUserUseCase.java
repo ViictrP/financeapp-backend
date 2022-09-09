@@ -4,14 +4,13 @@ import br.com.victorprado.core.entity.User;
 import br.com.victorprado.core.repository.UserRepository;
 import br.com.victorprado.core.usercase.user.ICreateUserUseCase;
 import br.com.victorprado.core.usercase.user.IGetUserUseCase;
-import java.util.List;
 import java.util.Optional;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @AllArgsConstructor
-public class GetUserUseCaseUseCaseUseCase implements IGetUserUseCase,
+public class GetUserUseCase implements IGetUserUseCase,
   ICreateUserUseCase {
 
   private final UserRepository repository;
