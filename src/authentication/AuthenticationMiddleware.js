@@ -3,8 +3,8 @@ const { ExpressOIDC } = require('@okta/oidc-middleware');
 const OktaJwtVerifier = require('@okta/jwt-verifier');
 
 const oktaJwtVerifier = new OktaJwtVerifier({
-	issuer: 'https://dev-894588.okta.com/oauth2/default',
-	clientId: '0oa1ph9tn79K0KLGY357'
+	issuer: 'issuer',
+	clientId: 'client-id'
 });
 
 class AuthenticationMiddleware {
@@ -18,9 +18,9 @@ class AuthenticationMiddleware {
 		});
 
 		this.oidc = new ExpressOIDC({
-			issuer: 'https://dev-894588.okta.com/oauth2/default',
-			client_id: '0oa1ph9tn79K0KLGY357',
-			client_secret: 'R7vE0-1Ec0mJivNcY-BOqSJ0Aie5E944WOqE9QYN',
+			issuer: 'issuer',
+			client_id: 'client-id',
+			client_secret: 'client-secret',
 			scope: 'openid profile',
 			appBaseUrl: 'http://localhost:3000'
 		});
